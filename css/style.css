@@ -85,6 +85,7 @@ nav .bouton-menu {
     right: 0px; 
     top: 0px;
     z-index: 1003;
+    border-radius: 20px;
 }
 
 
@@ -103,7 +104,7 @@ nav .bouton-menu {
 
 @media (hover: hover) {
     a:hover {
-      color: red;
+      color: blue;
       transform:translateX(10px);
     }
   }
@@ -221,6 +222,7 @@ body.contact-page  {
     overflow: hidden;
     top: 0;
     position: relative;
+
 }
 
 video {
@@ -229,6 +231,9 @@ video {
     width: 100vw; 
     height: 100vh; 
     object-fit: cover;
+    margin: 0; 
+    padding: 0; 
+    z-index: 1; 
 }
 
 .video-text {
@@ -247,4 +252,40 @@ video {
     font-weight: bold;
     margin: 0;
     padding: 0;
+}
+
+.content-vid {
+    position: relative; 
+    top: -15%;
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 50%; 
+    height: 300px; 
+    background-color: blue; 
+    color: white; 
+    text-align: center; 
+    z-index: 2; 
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-size: 40px;
+
+}
+
+
+.image-container {
+    position: relative; 
+    width: 100vw;
+    height: 500px; 
+    overflow: hidden; 
+    top: -400px; 
+}
+
+.imgshow {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    min-width: 100%; 
+    min-height: 100%; 
+    object-fit: cover; 
 }
