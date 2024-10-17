@@ -12,7 +12,7 @@
 
     <nav>
         <div class="menu-container" x-data="{ open: false }">
-            <button @click="open = !open" id="toggle-button">Menu</button>
+            <button @click="open = !open" id="toggle-button" class="bouton-menu" x-text="open ? 'Fermer'">Menu</button>
 
 
             <div class="overlay" id="overlay"></div>
@@ -29,7 +29,6 @@
             </div>
         </div>
     </nav>
-
 
     <script src="./javascript/script.js"></script>
 </body>
