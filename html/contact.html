@@ -10,7 +10,7 @@
 <body class="contact-page">
     <nav>
         <div class="menu-container" x-data="{ open: false }">
-            <button @click="open = !open" id="toggle-button" class="bouton-menu">Menu</button>
+            <button @click="open = !open" id="toggle-button" class="bouton-menu" x-text="open ? 'Fermer' : 'Menu'"></button>
             <div class="overlay" id="overlay"></div>
             <div class="menu" id="menu">
                 <a href="/Maquette-Site-EFREI-Motorsport-/index.html">
