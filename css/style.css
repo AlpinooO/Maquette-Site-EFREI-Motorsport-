@@ -61,7 +61,7 @@ html, body {
 }
 
 .menu h2 {
-    font-size: 90px;
+    font-size: 5vmin;
     margin: 20px 0;
     
 }
@@ -75,7 +75,7 @@ html, body {
 
 
 nav .bouton-menu {
-    font-size: 30px; 
+    font-size: 4vmin; 
     padding: 20px; 
     cursor: pointer;
     background: blue; 
@@ -164,7 +164,7 @@ body.contact-page  {
 
 .contact-page label {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 3vmin;
 }
 
 .contact-page input,
@@ -246,7 +246,12 @@ video {
     z-index: 2; 
     size: 5000px;
 }
-
+/*
+.video-img{
+    height: auto;
+    width: 10px;
+}
+*/
 .video-text h1 {
     font-size: 8rem; 
     font-weight: bold;
@@ -260,14 +265,14 @@ video {
     left: 50%; 
     transform: translateX(-50%); 
     width: 50%; 
-    height: 300px; 
+    height: 40vmin; 
     background-color: blue; 
     color: white; 
     text-align: center; 
     z-index: 2; 
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    font-size: 40px;
+    font-size: 5vmin;
 
 }
 
