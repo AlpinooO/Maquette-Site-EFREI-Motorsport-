@@ -16,5 +16,35 @@ overlay.addEventListener('click', function () {
     body.classList.remove('open');
 });
 
+function formValidation() {
+    return {
+        formData: {
+            name: '',
+            email: '',
+            subject: '',
+            message: ''
+        },
+        showAlert: false,
+        alertMessage: '',
 
+        validateForm() {
 
+            if (!this.formData.name || !this.formData.email || !this.formData.subject || !this.formData.message) {
+                this.alertMessage = "Tous les champs sont obligatoires.";
+                this.showAlert = true; 
+            } else {
+                this.alertMessage = "Formulaire envoyé avec succès.";
+                this.showAlert = true;
+            }
+            console.log('showAlert:', this.showAlert);
+        },
+
+        closeAlert() {
+            console.log("Close button clicked!");  
+            this.showAlert = false;  
+        }
+    }
+}
+document.addEventListener('alpine:init', () => {
+    Alpine.data('formValidation', formValidation);
+});

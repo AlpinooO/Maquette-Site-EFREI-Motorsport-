@@ -26,9 +26,10 @@
         </div>
     </nav>
 
-    <div class="container">
+   
+    <div class="container" x-data="formValidation()">
         <h1>Nous Contacter</h1>
-        <form action="feedback.php" method="post">
+        <form @submit.prevent="validateForm">
             <div class="form-group">
                 <label for="name">Nom:</label>
                 <input
@@ -37,7 +38,7 @@
                     id="name"
                     class="form-control"
                     placeholder="Entrez votre nom"
-                    required
+                    x-model="formData.name"
                 />
             </div>
             <div class="form-group">
@@ -48,7 +49,7 @@
                     id="email"
                     class="form-control"
                     placeholder="Entrez votre email"
-                    required
+                    x-model="formData.email"
                 />
             </div>
             <div class="form-group">
@@ -59,7 +60,7 @@
                     id="subject"
                     class="form-control"
                     placeholder="Entrez le sujet"
-                    required
+                    x-model="formData.subject"
                 />
             </div>
             <div class="form-group">
@@ -70,10 +71,16 @@
                     class="form-control"
                     rows="10"
                     placeholder="Entrez votre message"
-                    required
+                    x-model="formData.message"
                 ></textarea>
             </div>
             <button type="submit" class="btn submit-btn">Envoyer -></button>
+            <div x-show="showAlert" class="alert-box" style="display: none;" x-cloak>
+                <p x-text="alertMessage"></p>
+                <button @click="closeAlert">Fermer</button>
+            </div>
+
+            <!-- tentative d'une alerte box si on ne remplis pas le form. J'ai essayé mais soit l'alerte reste même en mettant "fermée" ou sinon il ne s'affiche meme pas alors qu'il y a des erreurs-->
         </form>
     </div>
 
