@@ -75,7 +75,7 @@ html, body {
 
 
 nav .bouton-menu {
-    font-size: 4vmin; 
+    font-size: 2vmin; 
     padding: 20px; 
     cursor: pointer;
     background: blue; 
@@ -114,7 +114,7 @@ nav .bouton-menu {
 }
 
 body.contact-page  {
-    background-image: url('/Maquette-Site-EFREI-Motorsport-/media/formimg.png'); 
+    background-image: url('/media/formimg.png'); 
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
@@ -122,6 +122,7 @@ body.contact-page  {
     height: 100vh; 
     position: relative;
 }
+/*
 .blur-background {
     position: absolute; 
     top: 0;
@@ -133,6 +134,8 @@ body.contact-page  {
     filter: blur(10px); 
     z-index: 1; 
 }
+
+*/
 .contact-page .container {
     position: relative; 
     z-index: 2; 
@@ -246,17 +249,19 @@ video {
     z-index: 2; 
     size: 5000px;
 }
-/*
-.video-img{
+.video-text .video-logo {
+    width: 20vw; 
+    max-width: 1000px; 
     height: auto;
-    width: 10px;
+    margin-bottom: 20px; 
 }
-*/
 .video-text h1 {
     font-size: 8rem; 
     font-weight: bold;
     margin: 0;
     padding: 0;
+
+    
 }
 
 .content-vid {
@@ -264,8 +269,8 @@ video {
     top: -15%;
     left: 50%; 
     transform: translateX(-50%); 
-    width: 50%; 
-    height: 40vmin; 
+    width: 50vw; 
+    height: 25vw; 
     background-color: blue; 
     color: white; 
     text-align: center; 
@@ -280,9 +285,9 @@ video {
 .image-container {
     position: relative; 
     width: 100vw;
-    height: 500px; 
+    height: 50vw; 
     overflow: hidden; 
-    top: -400px; 
+    top: -33vw; 
 }
 
 .imgshow {

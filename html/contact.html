@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Accueil</title>
     <script src="https://unpkg.com/alpinejs" defer></script>
-    <link rel="stylesheet" href="/Maquette-Site-EFREI-Motorsport-/css/style.css"> 
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/mobile.css">
 </head>
 <body class="contact-page">
     <nav>
@@ -13,15 +14,14 @@
             <button @click="open = !open" id="toggle-button" class="bouton-menu" x-text="open ? 'Fermer' : 'Menu'"></button>
             <div class="overlay" id="overlay"></div>
             <div class="menu" id="menu">
-                <a href="/Maquette-Site-EFREI-Motorsport-/index.html">
-                    <img src="/Maquette-Site-EFREI-Motorsport-/media/EM2.png" alt="Logo">
-                </a>
-                <a href="/Maquette-Site-EFREI-Motorsport-/index.html"><h2>Accueil</h2></a>
-                <a href="/Maquette-Site-EFREI-Motorsport-/html/news.html"><h2>News</h2></a>
-                <a href="/Maquette-Site-EFREI-Motorsport-/html/picture.html"><h2>Album Photo</h2></a>
-                <a href="/Maquette-Site-EFREI-Motorsport-/html/add.html"><h2>Adhérent</h2></a>
-                <a href="/Maquette-Site-EFREI-Motorsport-/html/event.html"><h2>Événements</h2></a>
-                <a href="/Maquette-Site-EFREI-Motorsport-/html/contact.html"><h2>Nous contacter</h2></a>
+
+                <a href="/index.html"><img src="/media/EM2.png"></a>
+                <a href="/index.html"><h2>Accueil</h2></a>
+                <a href="/html/news.html"><h2>News</h2></a>
+                <a href="/html/picture.html"><h2>Album Photo</h2></a>
+                <a href="/html/add.html"><h2>Adhérent</h2></a>
+                <a href="/html/event.html"><h2>Événements</h2></a>
+                <a href="/html/contact.html"><h2>Nous contacter</h2></a>
             </div>
         </div>
     </nav>
@@ -77,6 +77,6 @@
         </form>
     </div>
 
-    <script src="/Maquette-Site-EFREI-Motorsport-/javascript/script.js"></script>
+    <script src="/javascript/script.js"></script>
 </body>
 </html>
