@@ -440,5 +440,20 @@ video {
     font-size: 4rem;
     text-align: center;
     z-index: 2;  
-    
-    }
+}
+
+.search-bar{
+    display: flex;
+    justify-content: center;  
+    align-items: center; 
+    position: absolute; 
+    top: 20vw;
+    left: 0;
+    width: 20%;
+    height: auto;
+    color: rgb(0, 0, 0); 
+    font-size: 4rem;
+    text-align: center;
+    z-index: 2;  
+    border-radius: 10px;
+}

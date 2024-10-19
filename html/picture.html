@@ -24,46 +24,44 @@
             </div>
         </div>
     </nav>
-        
+    
     <div class="banner-container">
         <img src="/media/bannerpicture.jpg" class="bannerimg">
+        <div class="banner-text">
+            <h1>Photo Dump</h1>
+        </div>
+    </div>
 
-    <div class="banner-text">
-        <h1>Photo Dump</h1>
-    </div>
-    </div>
-    
     <div class="album-text">
         <h1>Nos Albums Photos!</h1>
     </div>
 
-    <!-- Les albums seront cliquable pour afficher + de photo, cependant par soucis notamment de performance et d'autre, je ne fait pas de fichier en +-->
-    <section class="album-container">
-        <div class="photo-item" @click="window.location.href='/html/album1.html'">
-            <img src="/media/mondialdelauto.jpg" alt="Photo 1">
-            <div class="photo-info">
-                <h2>Mondial de l'Automobile 2024</h2>
-                <p>Date: 19/10/2024</p>
-            </div>
-        </div>
+    <div x-data="{
+        search: '',
+        albums: [
+            {title: 'Mondial de l\'Automobile 2024', date: '19/10/2024', img: '/media/mondialdelauto.jpg', url: '/html/album1.html'},
+            {title: '1ère scéance simulateur d\'EFREI motorsport!', date: '10/08/2024', img: '/media/Simuimage.jpg', url: '/html/album2.html'},
+            {title: 'Création d\'EFREI Motorsport', date: '05/08/2024', img: '/media/efrei.jpg', url: '/html/album3.html'}
+        ],
+        get filteredAlbums() {
+            return this.albums.filter(album => album.title.toLowerCase().includes(this.search.toLowerCase()));
+        }
+    }" class="album-search">
+        <input x-model="search" placeholder="Rechercher un album..." class="search-bar">
         
-        <div class="photo-item" @click="window.location.href='/html/album2.html'">
-            <img src="/media//Simuimage.jpg" alt="Photo 2">
-            <div class="photo-info">
-                <h2>1ère scéance simulateur d'EFREI motorsport!</h2>
-                <p>Date: 10/08/2024</p>
-            </div>
-        </div>
+        <section class="album-container">
+            <template x-for="album in filteredAlbums" :key="album.title">
+                <div class="photo-item" @click="window.location.href = album.url">
+                    <img :src="album.img" alt="Photo">
+                    <div class="photo-info">
+                        <h2 x-text="album.title"></h2>
+                        <p x-text="'Date: ' + album.date"></p>
+                    </div>
+                </div>
+            </template>
+        </section>
+    </div>
 
-        <div class="photo-item" @click="window.location.href='/html/album3.html'">
-            <img src="/media/efrei.jpg" alt="Photo 3">
-            <div class="photo-info">
-                <h2>Création d'EFREI Motorsport</h2>
-                <p>Date: 05/08/2024</p>
-            </div>
-        </div>
-    </section>
-    
     <script src="/javascript/script.js"></script>
 </body>
 </html>
