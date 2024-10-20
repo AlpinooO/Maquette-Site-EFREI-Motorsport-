@@ -1,3 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+    justify-content: justify;
+}
+@font-face {
+    font-family: 'font';
+    src: url(/font/Pointless.ttf);
+}
+
 nav {
     margin: 0;
     padding: 0;
@@ -63,6 +73,7 @@ html, body {
 .menu h2 {
     font-size: 5vmin;
     margin: 20px 0;
+    font-family: var(--font);
     
 }
 
@@ -71,6 +82,7 @@ html, body {
     text-decoration: none;
     color: black;
     transition: transform 0.3s ease;
+    font-family: var(--font);
 }
 
 
@@ -151,7 +163,7 @@ body.contact-page  {
     font-size: 5.5rem;
     margin-top: 10rem;
     text-align: center;
-    font-family: sans-serif;
+    font-family: var(--font);
 }
 
 .contact-page form {
@@ -209,6 +221,7 @@ body.contact-page  {
     margin-right: auto;
     width: 45%;
     margin-top: 20px; 
+    font-family: var(--font);
 }
 
 
@@ -260,7 +273,7 @@ video {
     font-weight: bold;
     margin: 0;
     padding: 0;
-
+    font-family: var(--font);
     
 }
 
@@ -333,12 +346,14 @@ video {
     text-align: center;
     z-index: 2;  
     background-color: rgba(0, 0, 0, 0.3); 
+    font-family: var(--font);
 }
 
 .banner-text h1 {
     margin: 0;
     padding: 0;
     font-size: 7rem; 
+    font-family: var(--font);
 
 }
 .alert-box {
@@ -432,7 +447,7 @@ video {
     justify-content: center;  
     align-items: center; 
     position: absolute; 
-    top: 15vw;
+    top: 18vw;
     left: 0;
     width: 100%;
     height: auto;
@@ -447,7 +462,7 @@ video {
    
     align-items: center; 
     position: absolute; 
-    top: 20vw;
+    top: 22vw;
     left: 0;
     width: 20%;
     height: auto;
