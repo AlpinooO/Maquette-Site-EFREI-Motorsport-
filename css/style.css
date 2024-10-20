@@ -444,7 +444,7 @@ video {
 
 .search-bar{
     display: flex;
-    justify-content: center;  
+   
     align-items: center; 
     position: absolute; 
     top: 20vw;
