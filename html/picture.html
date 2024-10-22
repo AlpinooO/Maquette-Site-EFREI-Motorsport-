@@ -10,11 +10,15 @@
 </head>
 <body>
     <nav>
+        
         <div class="menu-container" x-data="{ open: false }">
             <button @click="open = !open" id="toggle-button" class="bouton-menu" x-text="open ? 'Fermer' : 'Menu'"></button>
-            <div class="overlay" id="overlay" x-show="open"></div> <!-- Ajout de l'attribut x-show pour le contrôle de l'affichage -->
-            <div class="menu" id="menu" x-show="open" @click.outside="open = false"> <!-- Ajout de la gestion du clic à l'extérieur pour fermer le menu -->
-                <a href="/index.html"><img src="/media/EM2.png" alt="Logo de l'entreprise"></a>
+
+            <div class="overlay" id="overlay"></div>
+
+    
+            <div class="menu" id="menu">
+                <a href="/index.html"><img src="/media/EM2.png"></a>
                 <a href="/index.html"><h2>Accueil</h2></a>
                 <a href="/html/news.html"><h2>News</h2></a>
                 <a href="/html/picture.html"><h2>Album Photo</h2></a>
@@ -24,6 +28,7 @@
             </div>
         </div>
     </nav>
+    
 
     <header class="banner-container">
         <img src="/media/bannerpicture.jpg" class="bannerimg" alt="Bannière de présentation">
@@ -42,7 +47,8 @@
             albums: [
                 {title: 'Mondial de l\'Automobile 2024', date: '19/10/2024', img: '/media/mondialdelauto.jpg', url: '/html/album1.html'},
                 {title: '1ère scéance simulateur d\'EFREI motorsport!', date: '10/08/2024', img: '/media/Simuimage.jpg', url: '/html/album2.html'},
-                {title: 'Création d\'EFREI Motorsport', date: '05/08/2024', img: '/media/efrei.jpg', url: '/html/album3.html'}
+                {title: 'Création d\'EFREI Motorsport', date: '05/08/2024', img: '/media/efrei.jpg', url: '/html/album3.html'},
+                
             ],
             get filteredAlbums() {
                 return this.albums.filter(album => album.title.toLowerCase().includes(this.search.toLowerCase()));

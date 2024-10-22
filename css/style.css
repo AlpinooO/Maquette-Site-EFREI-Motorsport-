@@ -260,10 +260,10 @@ video {
     color: white; 
     text-align: center; 
     z-index: 2; 
-    size: 5000px;
+    size: 5rem;
 }
 .video-text .video-logo {
-    width: 20vw; 
+    width: 50rem; 
     max-width: 1000px; 
     height: auto;
     margin-bottom: 20px; 
@@ -450,13 +450,13 @@ video {
     align-items: center; 
     width: 100%;
     height: auto;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-size: 4rem;
     text-align: center;
     z-index: 2;  
     margin-top: -46rem; 
     padding: 20px; 
-    background-color: blue; 
+
     border-radius: 10px;
     /* CSS a terminer */
 }
