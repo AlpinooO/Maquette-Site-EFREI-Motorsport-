@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acceuil</title>
+    <title>Accueil</title>
     <script src="https://unpkg.com/alpinejs" defer></script>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/mobile.css">
@@ -12,9 +12,9 @@
     <nav>
         <div class="menu-container" x-data="{ open: false }">
             <button @click="open = !open" id="toggle-button" class="bouton-menu" x-text="open ? 'Fermer' : 'Menu'"></button>
-            <div class="overlay" id="overlay"></div>
-            <div class="menu" id="menu">
-                <a href="/index.html"><img src="/media/EM2.png"></a>
+            <div class="overlay" id="overlay" x-show="open"></div> <!-- Ajout de l'attribut x-show pour le contrôle de l'affichage -->
+            <div class="menu" id="menu" x-show="open" @click.outside="open = false"> <!-- Ajout de la gestion du clic à l'extérieur pour fermer le menu -->
+                <a href="/index.html"><img src="/media/EM2.png" alt="Logo de l'entreprise"></a>
                 <a href="/index.html"><h2>Accueil</h2></a>
                 <a href="/html/news.html"><h2>News</h2></a>
                 <a href="/html/picture.html"><h2>Album Photo</h2></a>
@@ -24,45 +24,55 @@
             </div>
         </div>
     </nav>
-    
-    <div class="banner-container">
-        <img src="/media/bannerpicture.jpg" class="bannerimg">
+
+    <header class="banner-container">
+        <img src="/media/bannerpicture.jpg" class="bannerimg" alt="Bannière de présentation">
         <div class="banner-text">
             <h1>Photo Dump</h1>
         </div>
-    </div>
+    </header>
 
-    <div class="album-text">
-        <h1>Nos Albums Photos!</h1>
-    </div>
-
-    <div x-data="{
-        search: '',
-        albums: [
-            {title: 'Mondial de l\'Automobile 2024', date: '19/10/2024', img: '/media/mondialdelauto.jpg', url: '/html/album1.html'},
-            {title: '1ère scéance simulateur d\'EFREI motorsport!', date: '10/08/2024', img: '/media/Simuimage.jpg', url: '/html/album2.html'},
-            {title: 'Création d\'EFREI Motorsport', date: '05/08/2024', img: '/media/efrei.jpg', url: '/html/album3.html'}
-            
-        ],
-        get filteredAlbums() {
-            return this.albums.filter(album => album.title.toLowerCase().includes(this.search.toLowerCase()));
-        }
-    }" class="album-search">
-        <input x-model="search" placeholder="Rechercher un album..." class="search-bar">
-        
-        <section class="album-container">
-            <template x-for="album in filteredAlbums" :key="album.title">
-                <div class="photo-item" @click="window.location.href = album.url">
-                    <img :src="album.img" alt="Photo">
-                    <div class="photo-info">
-                        <h2 x-text="album.title"></h2>
-                        <p x-text="'Date: ' + album.date"></p>
-                    </div>
-                </div>
-            </template>
+    <main>
+        <section class="album-text">
+            <h1>Nos Albums Photos!</h1>
         </section>
-    </div>
-        <!--Il faut ajouter une page après pour montrer l'album. On verra comment on fera pour éviter a chaque fois de créer un nouveau .html mais ça devrait le faire.-->
-    <script src="/javascript/script.js"></script>
+
+        <div x-data="{
+            search: '',
+            albums: [
+                {title: 'Mondial de l\'Automobile 2024', date: '19/10/2024', img: '/media/mondialdelauto.jpg', url: '/html/album1.html'},
+                {title: '1ère scéance simulateur d\'EFREI motorsport!', date: '10/08/2024', img: '/media/Simuimage.jpg', url: '/html/album2.html'},
+                {title: 'Création d\'EFREI Motorsport', date: '05/08/2024', img: '/media/efrei.jpg', url: '/html/album3.html'}
+            ],
+            get filteredAlbums() {
+                return this.albums.filter(album => album.title.toLowerCase().includes(this.search.toLowerCase()));
+            }
+        }" class="album-search">
+            <input x-model="search" placeholder="Rechercher un album..." class="search-bar" aria-label="Recherche d'album">
+            
+            <section class="album-container">
+                <template x-for="album in filteredAlbums" :key="album.title">
+                    <div class="photo-item" @click="window.location.href = album.url">
+                        <img :src="album.img" alt="Photo de l'album" loading="lazy">
+                        <div class="photo-info">
+                            <h2 x-text="album.title"></h2>
+                            <p x-text="'Date: ' + album.date"></p>
+                        </div>
+                    </div>
+                </template>
+            </section>
+        </div>
+
+        <section class="lorem-section">
+            <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti doloremque quisquam fugiat blanditiis unde eius, sequi enim dolorum excepturi iste obcaecati soluta vero aperiam repellat atque ea, ab quos sed!</h1>
+            <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti doloremque quisquam fugiat blanditiis unde eius, sequi enim dolorum excepturi iste obcaecati soluta vero aperiam repellat atque ea, ab quos sed!</h1>
+            <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti doloremque quisquam fugiat blanditiis unde eius, sequi enim dolorum excepturi iste obcaecati soluta vero aperiam repellat atque ea, ab quos sed!</h1>
+            <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti doloremque quisquam fugiat blanditiis unde eius, sequi enim dolorum excepturi iste obcaecati soluta vero aperiam repellat atque ea, ab quos sed!</h1>
+            <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti doloremque quisquam fugiat blanditiis unde eius, sequi enim dolorum excepturi iste obcaecati soluta vero aperiam repellat atque ea, ab quos sed!</h1>
+            <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti doloremque quisquam fugiat blanditiis unde eius, sequi enim dolorum excepturi iste obcaecati soluta vero aperiam repellat atque ea, ab quos sed!</h1>
+        </section>
+    </main>
+
+    <script src="/javascript/script.js" defer></script>
 </body>
 </html>
