@@ -28,6 +28,7 @@ html, body {
     overflow-x: hidden;
 }
 
+
 .content {
     position: relative;
     z-index: 1; 
@@ -241,7 +242,7 @@ body.contact-page  {
 
 }
 
-video {
+.video-section video {
     
     display: block; 
     width: 100vw; 
@@ -282,19 +283,27 @@ video {
     top: -15%;
     left: 50%; 
     transform: translateX(-50%); 
-    width: 70rem; 
-    height: 30rem; 
-    background-color: blue; 
+    width: 100rem; 
+    height: 50rem; 
+    background-color: rgba(66, 66, 236, 0.745); 
     color: white; 
     text-align: center; 
     z-index: 2; 
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    font-size: 5vmin;
-
+    font-size: 5rem;
+    flex: wrap;
+    padding: 0.5%;
+    /*opacity: 0; 
+    transform: translateX(-100%); 
+    transition: transform 1s ease-out, opacity 1s ease-out;*/
 }
-
-
+/*
+.visible {
+    opacity: 1;
+    transform: translateX(0); 
+}
+*/
 .image-container {
     position: relative; 
     width: 100vw;
@@ -319,6 +328,7 @@ video {
     height: 50vw; 
     overflow: hidden; 
     top: -33vw; 
+    margin-bottom:-28%;
 }
 
 .bannerimg {
@@ -356,40 +366,56 @@ video {
     font-family: var(--font);
 
 }
-.alert-box {
-    position: fixed;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 0, 0, 0.9); 
+[x-cloak] {
+    display: none !important;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+button {
+    background-color: #007bff;
     color: white;
-    padding: 20px;
-    border-radius: 10px;
-    z-index: 999;
-    text-align: center;
-    display: none; 
-}
-
-.alert-box[x-show="true"] {
-    display: block; 
-}
-
-.alert-box[x-show="false"] {
-    display: none; 
-}
-
-.alert-box[x-cloak] {
-    display: none;
-}
-
-.alert-box button {
-    background-color: #fff;
-    color: #ff0000;
+    padding: 0.5rem 1rem;
     border: none;
-    padding: 10px;
+    border-radius: 4px;
     cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.alert {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 1rem;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.alert button {
+    background: none;
+    border: none;
+    color: #721c24;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .album-container {
@@ -453,10 +479,70 @@ video {
     color: rgb(0, 0, 0);
     font-size: 4rem;
     text-align: center;
-    z-index: 2;  
-    margin-top: -46rem; 
+    z-index: 2; 
+    margin-top: -15em; 
     padding: 20px; 
-
     border-radius: 10px;
     /* CSS a terminer */
+}
+
+.album-text .search-bar{
+    font-size: 2rem;
+    width: 4em;
+    height: auto;
+
+    /*Css a faire*/
+}
+
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 2em;
+}
+
+.container img {
+    max-width: 100px;
+    margin-right: 20px;
+}
+
+.details-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.details-content {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 8px;
+    width: 40%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.close-button {
+    background: red;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
 }

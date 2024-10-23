@@ -16,6 +16,12 @@ overlay.addEventListener('click', function () {
     body.classList.remove('open');
 });
 
+
+document.addEventListener('alpine:init', () => {
+    Alpine.data('formValidation', formValidation);
+});
+
+
 function formValidation() {
     return {
         formData: {
@@ -25,26 +31,16 @@ function formValidation() {
             message: ''
         },
         showAlert: false,
-        alertMessage: '',
-
         validateForm() {
-
             if (!this.formData.name || !this.formData.email || !this.formData.subject || !this.formData.message) {
-                this.alertMessage = "Tous les champs sont obligatoires.";
-                this.showAlert = true; 
-            } else {
-                this.alertMessage = "Formulaire envoyé avec succès.";
                 this.showAlert = true;
-            }
-            console.log('showAlert:', this.showAlert);
-        },
+            } else {
+                this.showAlert = false;
 
-        closeAlert() {
-            console.log("Close button clicked!");  
-            this.showAlert = false;  
+                alert('Formulaire soumis avec succès !');
+            }
         }
     }
 }
-document.addEventListener('alpine:init', () => {
-    Alpine.data('formValidation', formValidation);
-});
+
+

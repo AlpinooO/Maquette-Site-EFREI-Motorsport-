@@ -24,8 +24,56 @@
             </div>
         </div>
     </nav>
+     <header class="banner-container">
+        <img src="/media/bannerpicturenews.png" class="bannerimg" alt="Bannière de présentation">
+        <div class="banner-text">
+            <h1>Les news de la semaine</h1>
+        </div>
+    </header>
 
-    <!--A faire si possible en dernier -->
+    <main>
+        <div class="container" x-data="{ open: false }" @click="open = true">
+            <img src="/media/news1test.png" alt="News1 image">
+            <div>
+                <h3>Nouveau Court Métrage</h3>
+                <p>Un nouveau court métrage sur le thème de la course Japonaise! Si vous aimez aussi le paranormal alors c'est fait pour vous!</p>
+            </div>
+          <!--Test avec un lien et une vidéo pour voir si ça marche bien-->
+            <div class="details-modal" x-show="open" x-transition>
+                <div class="details-content" @click.stop>
+                    <h2>Samurai Blue: Afterimage</h2>
+                    <p>Ce court métrage est réalisé par Winterstellar Studio sur le logiciel Blender est un court métrage sur une course de montage célèbre au japon.</p>
+                    <p>Le liens vers cette vidéo:</p> 
+                    <a href="https://www.youtube.com/watch?v=54XMIeUN1hY&t=7s" target="_blank">Le lien</a>
+                    <p>Le trailer:</p>
+                    <video controls muted playsinline autoplay width="500">
+                        <source src="/media/news1.mp4">
+                    </video>
+                    <br>
+                    <button class="close-button" @click="open = false">Fermer</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" x-data="{ open: false }" @click="open = true">
+            <img src="/media/news2.jpg" alt="News2 Image">
+            <div>
+                <h3>LECLERC A GAGNE AU GP DES ETAT-UNIS</h3>
+                <p>Encore une autre victoire au Monégasque qui viens prendre la P1!</p>
+            </div>
+           
+            <div class="details-modal" x-show="open" x-transition>
+                <div class="details-content" @click.stop>
+                    <h2>Leclerc, enfin un championnat gagné?</h2>
+                    <p>Ferrari a retrouvé des ambitions, d’ici la fin de saison alors qu’il ne reste que cinq courses au programme du championnat du monde de Formule 1. Charles Leclerc, vainqueur du Grand Prix des États-Unis, ce week-end du 19 et 20 octobre, et Carlos Sainz, deuxième, ont permis à la Scuderia de revenir très fort dans la course au titre des constructeurs.</p>
+                    <img src="/media/news2detail.webp" width="400" height=auto>
+                    <br>
+                    <button class="close-button" @click="open = false">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
     <script src="/javascript/script.js"></script>
 </body>
 </html>

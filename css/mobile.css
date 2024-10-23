@@ -1,8 +1,19 @@
-@media screen and (max-width:600px){
-    main,
-    main article,
-    main section{
-        width: 100%;
-        margin:0;
+@media (max-width: 768px) {
+    .menu {
+        width: 100vw; 
+    }
+
+    .video-text h1 {
+        font-size: 4rem; 
+    }
+
+    .video-text .video-logo {
+        width: 30rem; 
+    }
+
+    .content-vid {
+        width: 90vw; 
+        height: auto; 
+        font-size: 2rem; 
     }
 }
